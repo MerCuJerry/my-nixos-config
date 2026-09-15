@@ -1,0 +1,68 @@
+{
+  "nodes": {
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1789114715,
+        "narHash": "sha256-ugpsyk3NM2s87vXfUiIIiibbJ4Pp0JPS5p/3mfs+q+c=",
+        "ref": "nixos-26.05",
+        "rev": "21a67dc470149f337cecafbe965d8d252a390518",
+        "shallow": true,
+        "type": "git",
+        "url": "https://mirrors.nju.edu.cn/git/nixpkgs.git"
+      },
+      "original": {
+        "ref": "nixos-26.05",
+        "shallow": true,
+        "type": "git",
+        "url": "https://mirrors.nju.edu.cn/git/nixpkgs.git"
+      }
+    },
+    "nixpkgs-unstable": {
+      "locked": {
+        "lastModified": 1789149629,
+        "narHash": "sha256-H6GwaZzZf+4npqv0tph94w9tZddSjFjmQrVsW0z78uk=",
+        "ref": "nixos-unstable",
+        "rev": "eaad089433ca2bb662274377d33df3d0e51ef28b",
+        "shallow": true,
+        "type": "git",
+        "url": "https://mirrors.nju.edu.cn/git/nixpkgs.git"
+      },
+      "original": {
+        "ref": "nixos-unstable",
+        "shallow": true,
+        "type": "git",
+        "url": "https://mirrors.nju.edu.cn/git/nixpkgs.git"
+      }
+    },
+    "root": {
+      "inputs": {
+        "nixpkgs": "nixpkgs",
+        "nixpkgs-unstable": "nixpkgs-unstable",
+        "trae": "trae"
+      }
+    },
+    "trae": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1789377623,
+        "narHash": "sha256-HQgIvULkZ4ycE3P+wuRTRXUuFrfN/KZHJTXRwNOzZnE=",
+        "owner": "MerCuJerry",
+        "repo": "trae-cn-nixos",
+        "rev": "8d499a303554523a4e75870569cd30eba9b8a33a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "MerCuJerry",
+        "ref": "main",
+        "repo": "trae-cn-nixos",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
