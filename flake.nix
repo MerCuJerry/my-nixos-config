@@ -25,9 +25,13 @@
       url = "github:MerCuJerry/trae-cn-nixos/main";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+    home-manager = {
+      url = "git+https://gitee.com/mirrors/home-manager-nix.git?ref=release-26.05&shallow=1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, trae, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, trae, home-manager, ... }@inputs:
   let
     system = "x86_64-linux";
     pkgsUnstable = import nixpkgs-unstable {
@@ -39,22 +43,32 @@
   nixosConfigurations = {
       mekurilap = nixpkgs.lib.nixosSystem {
         inherit system;
-        modules = [
-            ./boot.nix
-            ./hardware-configuration.nix
-            ./configuration.nix
-            ./network.nix
-            ./system-environment.nix
-            ./locale.nix
-            ./users.nix
-            ./display.nix
-            ./proxy.nix
-            ./packages.nix
-        ];
         specialArgs = {
           inherit pkgsUnstable;
           inherit traePkgs;
         };
+        modules = [
+          ./boot.nix
+          ./hardware-configuration.nix
+          ./configuration.nix
+          ./network.nix
+          ./system-environment.nix
+          ./locale.nix
+          ./users.nix
+          ./display.nix
+          ./proxy.nix
+          ./packages.nix
+
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.mercujerry = import ./home;
+            home-manager.extraSpecialArgs = {
+              inherit pkgsUnstable;
+              inherit traePkgs;
+            };
+          }
+        ];
       };
     };
   };
