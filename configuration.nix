@@ -8,6 +8,7 @@
 
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  programs.nix-ld.enable = true;
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
   
