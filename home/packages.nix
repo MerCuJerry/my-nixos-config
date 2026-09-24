@@ -68,10 +68,6 @@
 
     # for development
     uv
-    cmake
-    gnumake
-    gcc
-    openmpi
 
     # fish plugins
     fishPlugins.tide
@@ -85,10 +81,9 @@
   programs.vscode = {
     enable = true;
     profiles.default.extensions = with pkgs.vscode-extensions; [
-      bbenoist.nix
+      jnoortheen.nix-ide
       ms-python.python
       ms-python.vscode-pylance
-      twxs.cmake
       ms-vscode.cpptools-extension-pack
       charliermarsh.ruff
       fill-labs.dependi
@@ -97,6 +92,7 @@
       ms-python.vscode-python-envs
       myriad-dreamin.tinymist
       tomoki1207.pdf
+      arrterian.nix-env-selector      
       rust-lang.rust-analyzer
     ];
   };

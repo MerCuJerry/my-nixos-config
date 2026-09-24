@@ -2,12 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    vim
-    nano
-    wget
-    curl
     sysstat
-    fish
     lm_sensors
   ];
 
