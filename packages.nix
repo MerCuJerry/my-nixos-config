@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     sysstat
     lm_sensors
+    ntfs3g
   ];
 
   programs.fish.enable = true;

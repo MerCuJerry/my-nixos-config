@@ -89,7 +89,6 @@
       fill-labs.dependi
       mhutchie.git-graph
       ms-ceintl.vscode-language-pack-zh-hans
-      ms-python.vscode-python-envs
       myriad-dreamin.tinymist
       tomoki1207.pdf
       arrterian.nix-env-selector      
